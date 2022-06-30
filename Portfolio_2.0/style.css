@@ -1,0 +1,408 @@
+body {
+    font-family: "Roboto";
+    font-size: 1.6;
+
+}
+
+section {
+    width: 100%;
+}
+
+.home-page {
+    background-color: #EEEFF1;
+    height: 700px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 8rem;
+    justify-content: space-around;
+    padding-bottom: 160px;
+}
+
+.header_logo {
+    font-family: 'Revalia';
+    font-size: 3rem;
+    line-height: 4rem;
+    color: #34547A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 42px;
+}
+
+.nav__items {
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__items:hover {
+    color: #34547A;
+}
+
+.main_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.main_grid {
+    display: grid;
+    grid-template-columns: 357px 130px 486px;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "icon ddd content";
+    position: relative;
+}
+
+.icon_frame {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/Frame.svg);
+    width: 100%;
+    height: 100%;
+    grid-area: icon;
+    position: absolute;
+    top: 40px;
+}
+
+.main_column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 540px !important;
+    padding-right: 120px;
+    grid-area: content;
+}
+
+.main_title {
+    font-size: 48px;
+    padding-bottom: 60px;
+}
+
+.main_content {
+    font-size: 16px;
+    line-height: 26px;
+    padding-bottom: 60px;
+    color: #727272;
+}
+
+.button-send-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: white;
+    min-width: 225px;
+    min-height: 65px;
+    background-color: #34547A;
+    transition: background ease-in-out 120ms;
+    cursor: pointer;
+}
+
+.autor-page {
+    background-color: #ffffff;
+}
+
+.autor_wrapper {
+    height: 366px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.autor_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 540px !important;
+    grid-area: content;
+}
+
+.autor_title {
+    font-size: 32px;
+    padding-bottom: 50px;
+}
+
+.autor_content {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #727272;
+}
+
+.achievements {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #34547A;
+    height: 250px;
+    padding: 0 10%;
+}
+
+.filling_wrapper {
+    display: grid;
+    grid-template-columns: 50px 20px 70px;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "achievements_icon ddd achievements_content";
+    position: relative;
+    min-width: 140px;
+}
+
+.achievements_column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-area: achievements_content;
+}
+
+.icon_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.icon_achievements {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/project.svg);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    grid-area: achievements_icon;
+}
+
+.achievements_title {
+    font-size: 31px;
+    line-height: 25px;
+    max-width: 70px;
+    color: white;
+}
+
+.achievements_content {
+    font-size: 16px;
+    line-height: 25px;
+    max-width: 70px;
+    color: white;
+}
+
+.skills_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: 445px 150px 555px;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "skills ddd avatar";
+    position: relative;
+    min-width: 140px;
+}
+
+.skills_column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-area: skills;
+}
+
+.skills_title {
+    font-size: 32px;
+    color: black;
+    padding-bottom: 50px;
+}
+
+.skills_content {
+    font-size: 16px;
+    color: #727272;
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+.skills-level {
+    height: 4px;
+    width: 445px;
+    background-color: #727272;
+    position: absolute;
+    bottom: 0;
+}
+
+.skills-level-ok {
+    background-color: #34547A;
+    width: 60%;
+    position: absolute;
+    bottom: 0;
+}
+
+.avatar {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/ava.jpg);
+    width: 555px;
+    height: 450px;
+    grid-area: avatar;   
+}
+
+.jobs-page {
+    background-color: #EEEFF1;
+    display: flex;
+    justify-content: center;
+}
+
+.jobs_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jobs_title {
+    font-size: 32px;
+    color: black;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.jobs_content {
+    font-size: 16px;
+    line-height: 26px;
+    color: #727272;
+    padding-bottom: 50px;
+    max-width: 510px;
+    text-align: center;
+}
+
+.video {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/video_img.svg);
+    width: 1110px;
+    height: 600px; 
+    padding-bottom: 100px; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.tap_to_play {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/Vector.svg);
+    width: 100px;
+    height: 100px; 
+}
+
+.contacts-page {
+    background-color: #ffffff;
+    padding-top: 28px;
+}
+
+.job_wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.job-1 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/Job1.svg);
+    width: 25%;
+    height: 0;
+    padding-bottom: 25%; 
+}
+
+.job-2 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/Job2.svg);
+    width: 25%;
+    height: 0; 
+    padding-bottom: 25%; 
+}
+
+.sign-grid {
+    display: grid;
+    grid-template-columns: 270px 270px;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "emailtitle emailtitle"
+    "emailcontent emailcontent"
+    "emailtitle email"
+    "mesage mesage"
+    "button button";
+    position: relative;
+    min-width: 140px;
+}
+
+.sign_title {
+    font-size: 32px;
+    color: black;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    grid-area: emailtitle;
+}
+
+.sign_content {
+    font-size: 16px;
+    line-height: 26px;
+    color: #727272;
+    padding-bottom: 50px;
+    max-width: 510px;
+    text-align: center;
+    grid-area: emailcontent;
+}
+
+.red {
+    color: rgb(189, 0, 0);
+    font-size: 74px;
+    position: relative;
+}
+
+.img {
+    position: absolute;
+    top: -36px;
+    left: 53px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/pngwing.com.png);
+    height: 75px;
+    width: 75px;
+}
+
+.rdnl {
+    position: absolute;
+    top: 55px;
+    left: 126px;
+    height: 8px;
+    width: 153px;
+    background-color: rgb(189, 0, 0);;
+}
+
+.blnl {
+    position: absolute;
+    top: 15px;
+    left: -72px;
+    height: 8px;
+    width: 70px;
+    /* background-color: #34547A; */
+    background-color: rgb(189, 0, 0);;
+}
