@@ -1,0 +1,93 @@
+object Form5: TForm5
+  Left = 596
+  Height = 321
+  Top = 163
+  Width = 177
+  Caption = 'ЗООмагазин: тип товара'
+  ClientHeight = 321
+  ClientWidth = 177
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 177
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 192
+    Width = 23
+    Caption = 'Тип:'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 80
+    Height = 23
+    Top = 184
+    Width = 80
+    MaxLength = 16
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 80
+    Height = 25
+    Top = 214
+    Width = 80
+    Caption = 'Сохранить'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object Button2: TButton
+    Left = 80
+    Height = 25
+    Top = 286
+    Width = 80
+    Caption = 'Удалить'
+    OnClick = Button2Click
+    TabOrder = 3
+  end
+  object DBEdit1: TDBEdit
+    Left = 80
+    Height = 23
+    Top = 256
+    Width = 80
+    DataField = 'TYPE_M'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 16
+    TabOrder = 4
+    OnChange = DBEdit1Change
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 120
+    Top = 102
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'TYPE_M'
+        DataType = ftString
+        Precision = -1
+        Size = 16
+      end>
+    Active = True
+    Database = Form1.IBConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'select * from type_m order by type_m'
+    )
+    Params = <>
+    Left = 80
+    Top = 96
+  end
+end

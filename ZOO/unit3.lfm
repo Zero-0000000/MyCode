@@ -1,0 +1,124 @@
+object Form3: TForm3
+  Left = 797
+  Height = 334
+  Top = 151
+  Width = 322
+  Caption = 'ЗООмагазин: работники'
+  ClientHeight = 334
+  ClientWidth = 322
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object Label1: TLabel
+    Left = 14
+    Height = 15
+    Top = 192
+    Width = 30
+    Caption = 'ФИО:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 14
+    Height = 15
+    Top = 224
+    Width = 65
+    Caption = 'Должность:'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 80
+    Height = 23
+    Top = 184
+    Width = 80
+    MaxLength = 20
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 80
+    Height = 23
+    Top = 216
+    Width = 80
+    MaxLength = 12
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 80
+    Height = 25
+    Top = 248
+    Width = 80
+    Caption = 'Сохранить'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object Button2: TButton
+    Left = 232
+    Height = 25
+    Top = 214
+    Width = 80
+    Caption = 'Удалить'
+    OnClick = Button2Click
+    TabOrder = 3
+  end
+  object DBEdit1: TDBEdit
+    Left = 232
+    Height = 23
+    Top = 184
+    Width = 80
+    DataField = 'NAME_EM'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 20
+    TabOrder = 4
+    OnChange = DBEdit1Change
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 322
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 5
+  end
+  object Label3: TLabel
+    Left = 32
+    Height = 15
+    Top = 280
+    Width = 185
+    Caption = 'Необходимо заполнить все поля!'
+    ParentColor = False
+    Visible = False
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'NAME_EM'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'POSITION_EM'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end>
+    Active = True
+    Database = Form1.IBConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'SELECT * FROM EMPLOYEE order by name_em'
+    )
+    Params = <>
+    Left = 92
+    Top = 89
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 163
+    Top = 110
+  end
+end

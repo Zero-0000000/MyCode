@@ -1,0 +1,44 @@
+object Form8: TForm8
+  Left = 1129
+  Height = 121
+  Top = 190
+  Width = 320
+  Caption = 'Удаление'
+  ClientHeight = 121
+  ClientWidth = 320
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object Label1: TLabel
+    Left = 24
+    Height = 21
+    Top = 24
+    Width = 283
+    Caption = 'Вы точно желаете удалить все данные?'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 48
+    Height = 25
+    Top = 64
+    Width = 75
+    Caption = 'Да'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 192
+    Height = 25
+    Top = 64
+    Width = 75
+    Caption = 'Нет'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+end

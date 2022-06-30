@@ -1,0 +1,281 @@
+object Form2: TForm2
+  Left = 2815
+  Height = 375
+  Top = -377
+  Width = 756
+  Caption = 'ЗООмагазин: заказы'
+  ClientHeight = 375
+  ClientWidth = 756
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object Button1: TButton
+    Left = 112
+    Height = 25
+    Top = 320
+    Width = 80
+    Caption = 'Сохранить'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 496
+    Height = 25
+    Top = 224
+    Width = 78
+    Caption = 'Удалить'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object DBEdit1: TDBEdit
+    Left = 496
+    Height = 23
+    Top = 192
+    Width = 80
+    DataField = 'ID_ORDER'
+    DataSource = DataSource1
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 6
+    TabOrder = 2
+    OnChange = DBEdit1Change
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 15
+    Top = 202
+    Width = 55
+    Caption = 'Работник:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 15
+    Top = 232
+    Width = 68
+    Caption = 'Покупатель:'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 16
+    Height = 15
+    Top = 264
+    Width = 49
+    Caption = 'Продукт:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 16
+    Height = 15
+    Top = 296
+    Width = 88
+    Caption = 'Адрес доставки:'
+    ParentColor = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 756
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 3
+  end
+  object Button3: TButton
+    Left = 208
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Работники'
+    OnClick = Button3Click
+    TabOrder = 4
+    Visible = False
+  end
+  object Button4: TButton
+    Left = 208
+    Height = 25
+    Top = 224
+    Width = 75
+    Caption = 'Покупатели'
+    OnClick = Button4Click
+    TabOrder = 5
+    Visible = False
+  end
+  object Edit2: TEdit
+    Left = 112
+    Height = 23
+    Top = 288
+    Width = 80
+    MaxLength = 20
+    TabOrder = 6
+  end
+  object Edit3: TEdit
+    Left = 64
+    Height = 23
+    Top = 160
+    Width = 693
+    OnChange = Edit3Change
+    TabOrder = 7
+  end
+  object Label8: TLabel
+    Left = 16
+    Height = 15
+    Top = 169
+    Width = 38
+    Caption = 'Поиск:'
+    ParentColor = False
+  end
+  object Button5: TButton
+    Left = 584
+    Height = 25
+    Top = 320
+    Width = 152
+    Caption = 'Выгрузить данные в Excel'
+    OnClick = Button5Click
+    TabOrder = 8
+    Visible = False
+  end
+  object Memo1: TMemo
+    Left = 312
+    Height = 90
+    Top = 248
+    Width = 176
+    Lines.Strings = (
+      'Руководство пользователя: '
+      ''
+      '   Для добавления данных в таблицу БД* необходимо'
+      'внести все данные в поля заполнения и нажать кнопку "Сохранить".'
+      'Если при нажатии на поле вам предлагается список выбора, '
+      'а нужных данных в нем нет -  необходимо нажать кнопку справа '
+      'и внести правки в список. ВАЖНО помнить, что на определенные '
+      'поля заполнения действуют ограничения по количеству символов '
+      'или их типу. '
+      '   Для удаления данных из таблицы БД* необходимо выбрать '
+      'соответствующую строку и нажать кнопку "Удалить".'
+      '   Что-бы воспользоваться поиском - необходимо вписать искомое '
+      'в поле поиска. ВАЖНО помнить, что поиск является точным, '
+      'поэтому он не будет выдавать искомый результат в случае если '
+      'в запросе будет ошибка.  '
+      '   Что-бы экспортировать данные из таблицы БД в Excel - необходимо '
+      'нажать кнопку "Выгрузить данные в Excel". ВАЖНО - данная функция '
+      'использует стороннюю программу. Если программа "Excel" отсутствует '
+      'на вашем устройстве, то функия будет работать некорректно.'
+      ' '
+      ''
+      'БД* - База данных.'
+    )
+    TabOrder = 9
+    Visible = False
+  end
+  object Label6: TLabel
+    Left = 416
+    Height = 15
+    Top = 200
+    Width = 55
+    Caption = 'Удаление:'
+    ParentColor = False
+  end
+  object Button6: TButton
+    Left = 584
+    Height = 25
+    Top = 190
+    Width = 152
+    Caption = 'Удалить все данные'
+    Color = clNone
+    OnClick = Button6Click
+    TabOrder = 10
+    Visible = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 112
+    Height = 23
+    Top = 192
+    Width = 80
+    KeyField = 'NAME_EM'
+    ListField = 'NAME_EM'
+    ListFieldIndex = 0
+    ListSource = Form3.DataSource1
+    LookupCache = False
+    TabOrder = 11
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 112
+    Height = 23
+    Top = 224
+    Width = 80
+    KeyField = 'NAME'
+    ListField = 'NAME'
+    ListFieldIndex = 0
+    ListSource = Form4.DataSource1
+    LookupCache = False
+    TabOrder = 12
+  end
+  object DBLookupComboBox3: TDBLookupComboBox
+    Left = 112
+    Height = 23
+    Top = 256
+    Width = 80
+    KeyField = 'ID'
+    ListField = 'ID'
+    ListFieldIndex = 0
+    ListSource = Form1.DataSource1
+    LookupCache = False
+    TabOrder = 13
+  end
+  object Label1: TLabel
+    Left = 64
+    Height = 15
+    Top = 352
+    Width = 185
+    Caption = 'Необходимо заполнить все поля!'
+    ParentColor = False
+    Visible = False
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 400
+    Top = 72
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'ID_ORDER'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'EMPLOYEE_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'BUYER_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'ID_PRODUCT'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ADRESS_DELIVERY'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Database = Form1.IBConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'select * from orders order by id_order'
+    )
+    Params = <>
+    Left = 293
+    Top = 64
+  end
+end

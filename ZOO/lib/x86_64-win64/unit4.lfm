@@ -1,0 +1,147 @@
+object Form4: TForm4
+  Left = 1157
+  Height = 339
+  Top = 557
+  Width = 538
+  Caption = 'ЗООмагазин: покупатели'
+  ClientHeight = 339
+  ClientWidth = 538
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 538
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 192
+    Width = 30
+    Caption = 'ФИО:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 15
+    Top = 224
+    Width = 97
+    Caption = 'Номер телефона:'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 120
+    Height = 23
+    Top = 184
+    Width = 80
+    MaxLength = 20
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 120
+    Height = 23
+    Top = 216
+    Width = 80
+    MaxLength = 12
+    OnChange = Edit2Change
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 120
+    Height = 25
+    Top = 280
+    Width = 80
+    Caption = 'Сохранить'
+    OnClick = Button1Click
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 288
+    Height = 25
+    Top = 214
+    Width = 80
+    Caption = 'Удалить'
+    OnClick = Button2Click
+    TabOrder = 4
+  end
+  object DBEdit1: TDBEdit
+    Left = 288
+    Height = 23
+    Top = 184
+    Width = 80
+    DataField = 'NAME'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 20
+    TabOrder = 5
+    OnChange = DBEdit1Change
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 15
+    Top = 256
+    Width = 37
+    Caption = 'E-Mail:'
+    ParentColor = False
+  end
+  object Edit3: TEdit
+    Left = 120
+    Height = 23
+    Top = 248
+    Width = 80
+    MaxLength = 20
+    TabOrder = 6
+  end
+  object Label4: TLabel
+    Left = 72
+    Height = 15
+    Top = 312
+    Width = 185
+    Caption = 'Необходимо заполнить все поля!'
+    ParentColor = False
+    Visible = False
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 232
+    Top = 102
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'MOBILE_PHONE_NUM'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Active = True
+    Database = Form1.IBConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'select * from buyers order by name'
+    )
+    Params = <>
+    Left = 192
+    Top = 105
+  end
+end
