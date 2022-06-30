@@ -1,0 +1,87 @@
+object Form4: TForm4
+  Left = 1759
+  Height = 246
+  Top = 620
+  Width = 152
+  Caption = 'Soft List: Y/N'
+  ClientHeight = 246
+  ClientWidth = 152
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 100
+    Top = 0
+    Width = 152
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'YES_OR_NO'
+        FieldName = 'YES_OR_NO'
+      end>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 25
+    Height = 23
+    Top = 112
+    Width = 100
+    MaxLength = 10
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 25
+    Height = 25
+    Top = 144
+    Width = 100
+    Caption = 'Сохранить'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object DBEdit1: TDBEdit
+    Left = 25
+    Height = 23
+    Top = 183
+    Width = 100
+    DataField = 'YES_OR_NO'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 10
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 25
+    Height = 25
+    Top = 215
+    Width = 100
+    Caption = 'Удалить'
+    OnClick = Button2Click
+    TabOrder = 4
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 88
+    Top = 56
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'YES_OR_NO'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end>
+    Database = Form1.IBConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'select * from yes_or_no'
+    )
+    Params = <>
+    Left = 40
+    Top = 56
+  end
+end

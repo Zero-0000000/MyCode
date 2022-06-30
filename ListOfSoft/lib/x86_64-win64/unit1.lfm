@@ -1,0 +1,401 @@
+object Form1: TForm1
+  Left = 914
+  Height = 198
+  Top = 128
+  Width = 780
+  Caption = 'Soft List: User'
+  ClientHeight = 198
+  ClientWidth = 780
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.12.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 780
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        FieldName = 'ID'
+      end    
+      item
+        Title.Caption = 'PC_NAME'
+        FieldName = 'PC_NAME'
+      end    
+      item
+        Title.Caption = 'SOFT_NAME'
+        FieldName = 'SOFT_NAME'
+      end    
+      item
+        Title.Caption = 'LICENSE'
+        FieldName = 'LICENSE'
+      end    
+      item
+        Title.Caption = 'EXPIRATION_DATE'
+        FieldName = 'EXPIRATION_DATE'
+      end    
+      item
+        Title.Caption = 'RENEWAL_PRICE'
+        FieldName = 'RENEWAL_PRICE'
+      end>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 104
+    Height = 23
+    Top = 168
+    Width = 100
+    DataField = 'PC_NAME'
+    DataSource = Form2.DataSource1
+    KeyField = 'PC_NAME'
+    ListField = 'PC_NAME'
+    ListFieldIndex = 0
+    ListSource = Form2.DataSource1
+    LookupCache = False
+    TabOrder = 1
+    Visible = False
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 104
+    Height = 23
+    Top = 200
+    Width = 100
+    DataField = 'SOFT_NAME'
+    DataSource = Form3.DataSource1
+    KeyField = 'SOFT_NAME'
+    ListField = 'SOFT_NAME'
+    ListFieldIndex = 0
+    ListSource = Form3.DataSource1
+    LookupCache = False
+    TabOrder = 2
+    Visible = False
+  end
+  object DBLookupComboBox3: TDBLookupComboBox
+    Left = 104
+    Height = 23
+    Top = 232
+    Width = 100
+    DataField = 'YES_OR_NO'
+    DataSource = Form4.DataSource1
+    KeyField = 'YES_OR_NO'
+    ListField = 'YES_OR_NO'
+    ListFieldIndex = 0
+    ListSource = Form4.DataSource1
+    LookupCache = False
+    OnChange = DBLookupComboBox3Change
+    TabOrder = 3
+    Visible = False
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 104
+    Height = 23
+    Top = 264
+    Width = 79
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 4
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Visible = False
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44646
+    Time = 0.853402662040025
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object Edit1: TEdit
+    Left = 104
+    Height = 23
+    Top = 296
+    Width = 100
+    MaxLength = 10
+    TabOrder = 5
+    Visible = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 672
+    Height = 23
+    Top = 168
+    Width = 100
+    DataField = 'ID'
+    DataSource = DataSource1
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 6
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 104
+    Height = 25
+    Top = 328
+    Width = 100
+    Caption = 'Сохранить'
+    OnClick = Button1Click
+    TabOrder = 7
+    Visible = False
+  end
+  object Button2: TButton
+    Left = 672
+    Height = 25
+    Top = 198
+    Width = 100
+    Caption = 'Удалить'
+    OnClick = Button2Click
+    TabOrder = 8
+    Visible = False
+  end
+  object Button3: TButton
+    Left = 208
+    Height = 23
+    Top = 168
+    Width = 40
+    Caption = 'ред.'
+    OnClick = Button3Click
+    TabOrder = 9
+    Visible = False
+  end
+  object Button4: TButton
+    Left = 208
+    Height = 23
+    Top = 200
+    Width = 40
+    Caption = 'ред.'
+    OnClick = Button4Click
+    TabOrder = 10
+    Visible = False
+  end
+  object Button5: TButton
+    Left = 208
+    Height = 23
+    Top = 232
+    Width = 40
+    Caption = 'ред.'
+    OnClick = Button5Click
+    TabOrder = 11
+    Visible = False
+  end
+  object Edit2: TEdit
+    Left = 304
+    Height = 23
+    Top = 288
+    Width = 80
+    TabOrder = 12
+    Text = '---'
+    Visible = False
+  end
+  object DateTimePicker2: TDateTimePicker
+    Left = 304
+    Height = 23
+    Top = 256
+    Width = 79
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 13
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Visible = False
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 2958415
+    Time = 0.853402662090957
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 176
+    Width = 46
+    Caption = 'Имя ПК:'
+    ParentColor = False
+    Visible = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 208
+    Width = 32
+    Caption = 'Софт:'
+    ParentColor = False
+    Visible = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 240
+    Width = 56
+    Caption = 'Лицензия:'
+    ParentColor = False
+    Visible = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 272
+    Width = 91
+    Caption = 'Дата окончания:'
+    ParentColor = False
+    Visible = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 15
+    Top = 304
+    Width = 94
+    Caption = 'Цена продления:'
+    ParentColor = False
+    Visible = False
+  end
+  object Button6: TButton
+    Left = 672
+    Height = 25
+    Top = 168
+    Width = 100
+    Caption = 'Войти в стстему'
+    OnClick = Button6Click
+    TabOrder = 14
+  end
+  object DBLookupComboBox4: TDBLookupComboBox
+    Left = 88
+    Height = 23
+    Top = 168
+    Width = 100
+    KeyField = 'PC_NAME'
+    ListField = 'PC_NAME'
+    ListFieldIndex = 0
+    ListSource = Form2.DataSource1
+    LookupCache = False
+    TabOrder = 15
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 15
+    Top = 176
+    Width = 67
+    Caption = 'Софт на ПК:'
+    ParentColor = False
+  end
+  object Edit3: TEdit
+    Left = 336
+    Height = 23
+    Top = 168
+    Width = 100
+    OnChange = Edit3Change
+    TabOrder = 16
+  end
+  object Button7: TButton
+    Left = 560
+    Height = 25
+    Top = 168
+    Width = 100
+    Caption = 'Экспорт в Excel'
+    OnClick = Button7Click
+    TabOrder = 17
+  end
+  object Label7: TLabel
+    Left = 256
+    Height = 15
+    Top = 176
+    Width = 38
+    Caption = 'Поиск:'
+    ParentColor = False
+  end
+  object Button8: TButton
+    Left = 192
+    Height = 23
+    Top = 168
+    Width = 51
+    Caption = 'Вывод'
+    OnClick = Button8Click
+    TabOrder = 18
+  end
+  object IBConnection1: TIBConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'LOCALHOST:C:\ProjectIBExpert\LIST_OF_SOFT.FDB'
+    KeepConnection = False
+    Password = 'masterkey'
+    Transaction = SQLTransaction1
+    UserName = 'SYSDBA'
+    CharSet = 'UTF-8'
+    CheckTransactionParams = False
+    UseConnectionCharSetIfNone = False
+    Left = 48
+    Top = 56
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'PC_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'SOFT_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 25
+      end    
+      item
+        Name = 'LICENSE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'EXPIRATION_DATE'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RENEWAL_PRICE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end>
+    Active = True
+    Database = IBConnection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from soft_list'
+    )
+    Params = <>
+    Left = 167
+    Top = 56
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Action = caCommit
+    Database = IBConnection1
+    Left = 87
+    Top = 56
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 127
+    Top = 56
+  end
+end

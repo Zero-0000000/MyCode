@@ -1,0 +1,37 @@
+object Form6: TForm6
+  Left = 2540
+  Height = 138
+  Top = -298
+  Width = 141
+  Caption = 'Авторизация'
+  ClientHeight = 138
+  ClientWidth = 141
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object Edit1: TEdit
+    Left = 32
+    Height = 23
+    Top = 56
+    Width = 80
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 32
+    Height = 23
+    Top = 24
+    Width = 80
+    TabOrder = 1
+    Text = 'Admin'
+  end
+  object Button1: TButton
+    Left = 32
+    Height = 25
+    Top = 88
+    Width = 80
+    Caption = 'Войти'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+end

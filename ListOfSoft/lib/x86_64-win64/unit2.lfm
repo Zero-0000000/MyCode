@@ -1,0 +1,172 @@
+object Form2: TForm2
+  Left = 384
+  Height = 240
+  Top = 158
+  Width = 511
+  Caption = 'Soft List: PC'
+  ClientHeight = 240
+  ClientWidth = 511
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 100
+    Top = 0
+    Width = 512
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        FieldName = 'ID'
+      end    
+      item
+        Title.Caption = 'PC_NAME'
+        FieldName = 'PC_NAME'
+      end    
+      item
+        Title.Caption = 'USER_NAME'
+        FieldName = 'USER_NAME'
+      end    
+      item
+        Title.Caption = 'OFFICE_NUMBER'
+        FieldName = 'OFFICE_NUMBER'
+      end>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 128
+    Height = 23
+    Top = 168
+    Width = 100
+    DataField = 'OFFICE_NUMBER'
+    DataSource = Form5.DataSource1
+    KeyField = 'OFFICE_NUMBER'
+    ListField = 'OFFICE_NUMBER'
+    ListFieldIndex = 0
+    ListSource = Form5.DataSource1
+    LookupCache = False
+    TabOrder = 1
+  end
+  object Edit1: TEdit
+    Left = 128
+    Height = 23
+    Top = 104
+    Width = 100
+    MaxLength = 10
+    TabOrder = 2
+  end
+  object Edit2: TEdit
+    Left = 128
+    Height = 23
+    Top = 136
+    Width = 100
+    MaxLength = 20
+    TabOrder = 3
+  end
+  object DBEdit1: TDBEdit
+    Left = 400
+    Height = 23
+    Top = 104
+    Width = 100
+    DataField = 'ID'
+    DataSource = DataSource1
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 128
+    Height = 25
+    Top = 200
+    Width = 100
+    Caption = 'Сохранить'
+    OnClick = Button1Click
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 400
+    Height = 25
+    Top = 136
+    Width = 100
+    Caption = 'Удалить'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 229
+    Height = 23
+    Top = 168
+    Width = 40
+    Caption = 'ред.'
+    OnClick = Button3Click
+    TabOrder = 7
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 112
+    Width = 49
+    Caption = 'Имя ПК: '
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 144
+    Width = 105
+    Caption = 'Имя пользователя:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 176
+    Width = 110
+    Caption = 'Номер помещения:'
+    ParentColor = False
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 88
+    Top = 48
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'PC_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'USER_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'OFFICE_NUMBER'
+        DataType = ftString
+        Precision = -1
+        Size = 6
+      end>
+    Database = Form1.IBConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'select * from pc_list'
+    )
+    Params = <>
+    Left = 144
+    Top = 48
+  end
+end
